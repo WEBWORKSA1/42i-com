@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>42i — The Answer Engine for AI | Find the Best AI Tools for Anything</title>
+<meta name="description" content="42i is the answer engine for AI: discover the best AI tools, free prompts, tutorials and vetted AI experts for any task. Compare tools, get a free AI plan and join monthly AI contests.">
+<meta property="og:title" content="42i — The Answer Engine for AI"><meta property="og:description" content="Find the right AI tool, prompt and expert for anything."><meta property="og:type" content="website"><meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#7c5cff"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem("42i:theme");if(t)document.documentElement.setAttribute("data-theme",JSON.parse(t))}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"42i","url":"https://42i.com/","potentialAction":{"@type":"SearchAction","target":"https://42i.com/tools.html?q={query}","query-input":"required name=query"}}</script>
+</head>
+<body>
+<div class="domain-bar"><a href="https://web.works/contact" target="_blank" rel="noopener">Contact, if you are interested in this website/domain name</a></div>
+<header id="site-header"></header>
+<main>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">The answer to everything AI</span>
+    <h1>Find the right AI for <span class="grad-text">anything.</span></h1>
+    <p class="lead">Search hand-picked AI tools, copy-paste prompts, free tutorials and vetted AI experts — all in one place. Describe your task; 42i finds the answer.</p>
+    <form class="search-xl" action="tools.html" role="search">
+      <span class="s-icon">🔎</span>
+      <input name="q" id="heroQ" autocomplete="off" placeholder="e.g. “turn my blog posts into YouTube shorts”" aria-label="Search AI tools">
+      <button class="btn btn-primary">Find AI tools</button>
+    </form>
+    <div class="chips" id="heroChips"></div>
+    <div class="stats">
+      <div class="stat"><b id="statTools">0</b><span>Curated AI tools</span></div>
+      <div class="stat"><b data-count="12">0</b><span>Categories</span></div>
+      <div class="stat"><b id="statPrompts">0</b><span>Free prompts</span></div>
+      <div class="stat"><b>$0</b><span>Free forever for users</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="ad-slot" data-ad="banner"></div></div>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="section-head"><div><span class="eyebrow">Browse</span><h2>Explore by category</h2></div><a class="btn btn-ghost btn-sm" href="tools.html">All tools →</a></div>
+    <div class="grid g4" id="catGrid"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div><span class="eyebrow">Trending</span><h2>Editor’s picks this week</h2><p>The AI tools our readers open, save and actually keep using.</p></div>
+      <div class="toggle" id="homeTabs"><button class="active" data-tab="featured">Featured</button><button data-tab="free">Best free</button><button data-tab="code">Build apps</button></div>
+    </div>
+    <div class="grid g3" id="homeTools"></div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <span class="eyebrow" style="color:#fff;opacity:.85">For businesses</span>
+        <h2>Don’t just find AI. Get it working for you.</h2>
+        <p style="margin-top:12px">Tell us what eats your team’s time. Within 48 hours you get a free <b>AI Action Plan</b>: the exact tools, automations and savings estimate — plus optional matching with a vetted AI expert.</p>
+        <ul class="list-check" style="margin-top:16px;color:#fff"><li style="color:#fff">Free, no-obligation plan</li><li style="color:#fff">Vetted AI consultants & builders</li><li style="color:#fff">Typical teams save 10–40 hrs/week</li></ul>
+      </div>
+      <div class="form-card" style="color:var(--text)">
+        <form class="form" data-form="Lead: Quick AI Plan (home)">
+          <input class="hp" name="_honey" tabindex="-1" autocomplete="off">
+          <label class="f">Your name<input name="name" required autocomplete="name"></label>
+          <label class="f">Work email<input type="email" name="email" required autocomplete="email"></label>
+          <label class="f">What should AI do for you?<select name="need" required><option value="">Choose one…</option><option>Automate repetitive work</option><option>AI chatbot / customer support</option><option>Content & marketing at scale</option><option>Sales & lead generation</option><option>Build an AI app / product</option><option>Train my team on AI</option><option>Not sure — advise me</option></select></label>
+          <button class="btn btn-primary btn-block">Get my free AI plan →</button>
+          <p class="small center">🔒 No spam. Reply within 1 business day.</p>
+        </form>
+        <div class="form-success"><div class="big">🚀</div><h3>Request received!</h3><p>Want a sharper plan? <a class="grad-text" href="solutions.html">Add details in 60 seconds →</a></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div><span class="eyebrow">Prompt library</span><h2>Copy. Paste. Get results.</h2></div><a class="btn btn-ghost btn-sm" href="prompts.html">All prompts →</a></div>
+    <div class="grid g3" id="homePrompts"></div>
+  </div>
+</section>
+
+<div class="container"><div class="ad-slot" data-ad="inFeed"></div></div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div><span class="eyebrow">Watch & learn</span><h2>Understand AI in 20 minutes</h2><p>The best free explainers on the internet, hand-picked. New tool walkthroughs every week on our channel.</p></div><a class="btn btn-ghost btn-sm" id="ytBtn" target="_blank" rel="noopener">▶ Subscribe on YouTube</a></div>
+    <div class="grid g2" id="homeVideos"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container two-col">
+    <div>
+      <span class="eyebrow">Monthly contest</span>
+      <h2 id="cName">42 Days of AI</h2>
+      <p style="margin:12px 0 22px" id="cTheme"></p>
+      <div class="countdown" id="homeCountdown"></div>
+      <div style="display:flex;gap:10px;margin-top:24px;flex-wrap:wrap"><a class="btn btn-gold" href="contests.html#enter">Enter the contest</a><a class="btn btn-ghost" href="contests.html#host">Sponsor a prize</a></div>
+    </div>
+    <div class="card" id="homePrizes"><h3>🏆 Prizes</h3></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div><span class="eyebrow">Get involved</span><h2>Grow with 42i</h2></div></div>
+    <div class="grid g4">
+      <a class="card" href="submit.html"><span class="ico">🚀</span><h3>List your AI tool</h3><p>Put your product in front of people actively searching for AI. Free & fast-track options.</p></a>
+      <a class="card" href="advertise.html"><span class="ico">📣</span><h3>Advertise</h3><p>Sponsor categories, the newsletter and YouTube videos. Media kit inside.</p></a>
+      <a class="card" href="careers.html"><span class="ico">🧑‍💻</span><h3>Join our talent network</h3><p>AI builders, prompt engineers, writers and video creators — get hired.</p></a>
+      <a class="card" href="support.html"><span class="ico">💜</span><h3>Support 42i</h3><p>Keep 42i free and independent. Every contribution funds new guides and prizes.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="card" style="display:grid;grid-template-columns:1.2fr 1fr;gap:26px;align-items:center" id="nlCard">
+      <div><span class="eyebrow">Free weekly brief</span><h2>The 5-minute AI brief.</h2><p style="margin-top:10px">New tools that matter, one killer prompt and one money-making AI play — every Tuesday. Zero fluff.</p></div>
+      <div>
+        <form class="inline-form" data-form="Newsletter signup (home)"><input type="email" name="email" required placeholder="you@company.com" aria-label="Email"><input class="hp" name="_honey" tabindex="-1" autocomplete="off"><button class="btn btn-primary">Subscribe free</button></form>
+        <div class="form-success"><b>Welcome aboard! 🎉</b></div>
+        <p class="small" style="margin-top:8px">Unsubscribe anytime. We never sell your data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section faq">
+  <div class="container" style="max-width:860px">
+    <div class="center" style="margin-bottom:28px"><span class="eyebrow">FAQ</span><h2>Questions, answered</h2></div>
+    <details><summary>What is 42i?</summary><p>42i is an independent AI discovery hub. We curate the most useful AI tools, prompts and tutorials, and connect businesses with vetted AI experts. The name nods to the famous “answer to everything” — plus “i” for intelligence.</p></details>
+    <details><summary>Is 42i free?</summary><p>Yes. Browsing, saving, comparing tools, prompts and guides are free forever. We earn through clearly labelled sponsorships, advertising and affiliate links.</p></details>
+    <details><summary>How do you choose which tools to list?</summary><p>Every submission is reviewed by an editor for usefulness, transparency and real-world traction. Paid listings get faster review and more visibility, never a better verdict.</p></details>
+    <details><summary>Can you help my business implement AI?</summary><p>Yes — request a free AI Action Plan on our <a class="grad-text" href="solutions.html">AI Solutions</a> page and we’ll recommend tools and, if you want, match you with a vetted expert.</p></details>
+    <details><summary>How do I list my AI tool?</summary><p>Use the <a class="grad-text" href="submit.html">Submit</a> page. Free listings join the review queue; Fast-Track and Featured plans go live in 24–48 hours.</p></details>
+  </div>
+</section>
+</main>
+
+<div class="sticky-cta"><span class="small">Need AI for your business?</span><a class="btn btn-primary btn-sm" href="solutions.html">Free AI plan</a></div>
+
+<div class="exit-modal" id="exitModal" role="dialog" aria-modal="true" aria-label="Free cheat sheet">
+  <div class="form-card"><button class="close" aria-label="Close">×</button>
+    <span class="eyebrow">Before you go</span><h2 style="font-size:1.6rem">Get “The 42 AI Tools That Pay for Themselves”</h2>
+    <p style="margin:10px 0 18px">A free cheat sheet: the tool, the use case and the time it saves. Sent instantly with our weekly brief.</p>
+    <form class="form" data-form="Lead magnet: 42 AI tools cheat sheet"><input class="hp" name="_honey" tabindex="-1" autocomplete="off"><input type="email" name="email" required placeholder="Your best email" aria-label="Email"><button class="btn btn-primary btn-block">Send me the cheat sheet</button></form>
+    <div class="form-success"><div class="big">📬</div><h3>It’s on its way!</h3></div>
+  </div>
+</div>
+
+<footer id="site-footer"></footer>
+<script src="assets/js/config.js"></script><script src="assets/js/data.js"></script><script src="assets/js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  var A=APP,$=A.$,T=window.TOOLS,S=window.SITE;
+  $("#statTools").setAttribute("data-count",T.length);$("#statPrompts").setAttribute("data-count",PROMPTS.length);
+  ["write a blog post","make a logo","edit videos","build an app","automate email","transcribe meetings","make music"].forEach(function(c){
+    var b=document.createElement("button");b.type="button";b.className="chip";b.textContent=c;b.onclick=function(){location.href="tools.html?q="+encodeURIComponent(c)};$("#heroChips").appendChild(b)});
+  $("#catGrid").innerHTML=CATEGORIES.map(function(c){var n=T.filter(function(t){return t.cat===c.id}).length;
+    return '<a class="card cat-card" href="tools.html?cat='+c.id+'"><span class="ico">'+c.icon+'</span><span><h3 style="font-size:1rem">'+c.name+'</h3><p>'+n+' tools · '+c.blurb+'</p></span></a>'}).join("");
+  function tab(k){var list=k==="free"?T.filter(function(t){return t.pricing!=="Paid"}).slice(0,9):k==="code"?T.filter(function(t){return t.cat==="code"}).slice(0,9):T.filter(function(t){return t.featured}).slice(0,9);
+    $("#homeTools").innerHTML=list.map(function(t){return A.toolCard(t)}).join("")}
+  tab("featured");A.$$("#homeTabs button").forEach(function(b){b.onclick=function(){A.$$("#homeTabs button").forEach(function(x){x.classList.remove("active")});b.classList.add("active");tab(b.getAttribute("data-tab"))}});
+  $("#homePrompts").innerHTML=PROMPTS.slice(0,3).map(function(p){return '<div class="card prompt-card"><span class="badge">'+p.cat+'</span><h3 style="margin:10px 0">'+A.esc(p.title)+'</h3><pre>'+A.esc(p.text)+'</pre><button class="btn btn-ghost btn-sm" data-copy style="margin-top:12px">Copy prompt</button></div>'}).join("");
+  $("#homeVideos").innerHTML=VIDEOS.slice(0,2).map(function(v){return '<div><div class="yt" data-id="'+v.id+'" data-title="'+A.esc(v.title)+'"></div><div class="video-meta"><b>'+A.esc(v.title)+'</b><span class="small muted">'+A.esc(v.by)+'</span></div></div>'}).join("");A.videos();
+  $("#ytBtn").href=S.youtubeChannel;
+  var C=S.contest;$("#cName").textContent=C.name;$("#cTheme").textContent=C.theme+". Open to everyone, worldwide.";
+  $("#homePrizes").innerHTML+=C.prizes.map(function(p){return '<div class="prize"><b>'+p.place+'</b><span class="small muted" style="text-align:right">'+p.reward+'</span></div>'}).join("");
+  function cd(){var now=Date.now(),o=new Date(C.opens).getTime(),c=new Date(C.closes).getTime(),target=now<o?o:c,d=Math.max(0,target-now);
+    var u=[[Math.floor(d/864e5),"days"],[Math.floor(d/36e5)%24,"hours"],[Math.floor(d/6e4)%60,"mins"],[Math.floor(d/1e3)%60,"secs"]];
+    $("#homeCountdown").innerHTML='<p class="small" style="width:100%">'+(now<o?"Opens in":"Closes in")+'</p>'+u.map(function(x){return '<div><b>'+x[0]+'</b><span>'+x[1]+'</span></div>'}).join("")}
+  cd();setInterval(cd,1000);
+  if(window.innerWidth<700){$("#nlCard").style.gridTemplateColumns="1fr"}
+});
+</script>
+</body>
+</html>

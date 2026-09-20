@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Tools Directory — Search, Filter & Compare the Best AI Tools | 42i</title>
+<meta name="description" content="Search and filter the best AI tools by task, category, pricing and platform. Compare side by side, save favorites and find free alternatives on 42i.">
+<meta name="theme-color" content="#7c5cff"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem("42i:theme");if(t)document.documentElement.setAttribute("data-theme",JSON.parse(t))}catch(e){}</script>
+</head>
+<body>
+<div class="domain-bar"><a href="https://web.works/contact" target="_blank" rel="noopener">Contact, if you are interested in this website/domain name</a></div>
+<header id="site-header"></header>
+<main>
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / AI Tools</div>
+    <h1 id="dirTitle">AI Tools <span class="grad-text">Directory</span></h1>
+    <p class="lead" id="dirLead">Describe what you need in plain English, or filter by category, pricing and platform. Tick “Compare” on up to 3 tools to see them side by side.</p>
+  </div>
+</section>
+<section class="section-sm">
+  <div class="container dir">
+    <aside class="filters" aria-label="Filters">
+      <h4>Category</h4><div id="fCat"></div>
+      <h4>Pricing</h4><div id="fPrice"></div>
+      <h4>Platform</h4><div id="fPlat"></div>
+      <h4>Show</h4><label><input type="checkbox" id="fSaved"> Only my saved ♥</label><label><input type="checkbox" id="fFeat"> Only featured ★</label>
+      <button class="btn btn-ghost btn-sm btn-block" id="fReset" style="margin-top:14px">Reset filters</button>
+      <div class="ad-slot" data-ad="sidebar" style="margin-top:20px"></div>
+    </aside>
+    <div>
+      <div class="toolbar">
+        <input id="q" type="search" placeholder="Search tools, tasks or use cases…  (press / to focus)" aria-label="Search">
+        <select id="sort" aria-label="Sort" style="max-width:200px"><option value="rel">Sort: Relevance</option><option value="az">Name A–Z</option><option value="free">Free first</option><option value="feat">Featured first</option></select>
+      </div>
+      <p class="small muted" id="count" style="margin-bottom:14px"></p>
+      <div class="grid g3" id="results"></div>
+      <div class="ad-slot" data-ad="inFeed"></div>
+      <div class="card" style="margin-top:10px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+        <div><h3>Can’t find the right tool?</h3><p>Tell us your use case — we’ll recommend a stack or match you with an AI expert, free.</p></div>
+        <a class="btn btn-primary" href="solutions.html">Get a free recommendation</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<div class="compare-bar" id="cmpBar"><span id="cmpTxt" class="small"></span><a class="btn btn-primary btn-sm" id="cmpGo" href="compare.html">Compare now</a><button class="btn btn-ghost btn-sm" id="cmpClear">Clear</button></div>
+<footer id="site-footer"></footer>
+<script src="assets/js/config.js"></script><script src="assets/js/data.js"></script><script src="assets/js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  var A=APP,$=A.$,$$=A.$$,T=window.TOOLS,P=new URLSearchParams(location.search);
+  var SYN={blog:"writing",article:"writing",essay:"writing",copy:"writing",email:"writing automation",logo:"image design",photo:"image",picture:"image",art:"image",video:"video",youtube:"video",shorts:"video",clip:"video",edit:"video editing",voice:"audio",music:"audio",song:"audio",podcast:"audio video",app:"code",website:"code",code:"code",program:"code",automate:"automation",workflow:"automation",agent:"automation",meeting:"productivity",transcribe:"productivity",notes:"productivity",slides:"design",presentation:"design",seo:"marketing",ads:"marketing",social:"marketing",research:"research",paper:"research",study:"research",sales:"business",support:"business",leads:"business"};
+  function score(t,q){if(!q)return 1;var hay=(t.name+" "+t.tagline+" "+t.tags.join(" ")+" "+A.catName(t.cat)+" "+t.cat+" "+t.bestFor).toLowerCase(),s=0;
+    q.toLowerCase().split(/\s+/).filter(function(w){return w.length>2}).forEach(function(w){if(t.name.toLowerCase().indexOf(w)>-1)s+=5;if(hay.indexOf(w)>-1)s+=2;
+      Object.keys(SYN).forEach(function(k){if(w.indexOf(k)===0&&SYN[k].split(" ").indexOf(t.cat)>-1)s+=3})});return s}
+  function boxes(el,name,items){el.innerHTML=items.map(function(i){return '<label><input type="checkbox" name="'+name+'" value="'+i[0]+'"> '+i[1]+'</label>'}).join("")}
+  boxes($("#fCat"),"cat",CATEGORIES.map(function(c){return[c.id,c.icon+" "+c.name]}));
+  boxes($("#fPrice"),"price",[["Free","Free"],["Freemium","Freemium"],["Paid","Paid"]]);
+  var plats=[];T.forEach(function(t){t.platforms.forEach(function(p){if(plats.indexOf(p)<0)plats.push(p)})});
+  boxes($("#fPlat"),"plat",plats.sort().map(function(p){return[p,p]}));
+  if(P.get("q"))$("#q").value=P.get("q");
+  if(P.get("cat")){var cb=$('input[name=cat][value="'+P.get("cat")+'"]');if(cb)cb.checked=true;var c=CATEGORIES.filter(function(x){return x.id===P.get("cat")})[0];
+    if(c){$("#dirTitle").innerHTML="Best AI tools for <span class='grad-text'>"+c.name+"</span>";$("#dirLead").textContent=c.blurb+" Compare pricing, platforms and alternatives.";document.title="Best AI "+c.name+" Tools ("+new Date().getFullYear()+") | 42i"}}
+  if(P.get("saved"))$("#fSaved").checked=true;
+  function vals(n){return $$('input[name='+n+']:checked').map(function(i){return i.value})}
+  function render(){var q=$("#q").value.trim(),cs=vals("cat"),ps=vals("price"),pl=vals("plat"),sv=A.saved();
+    var list=T.map(function(t){return{t:t,s:score(t,q)}}).filter(function(o){var t=o.t;return o.s>0&&(!cs.length||cs.indexOf(t.cat)>-1)&&(!ps.length||ps.indexOf(t.pricing)>-1)&&(!pl.length||t.platforms.some(function(p){return pl.indexOf(p)>-1}))&&(!$("#fSaved").checked||sv.indexOf(t.slug)>-1)&&(!$("#fFeat").checked||t.featured)});
+    var so=$("#sort").value,rank={Free:0,Freemium:1,Paid:2};
+    list.sort(function(a,b){if(so==="az")return a.t.name.localeCompare(b.t.name);if(so==="free")return rank[a.t.pricing]-rank[b.t.pricing];if(so==="feat")return b.t.featured-a.t.featured;return b.s-a.s||b.t.featured-a.t.featured});
+    $("#count").textContent=list.length+" tool"+(list.length===1?"":"s")+" found"+(q?' for “'+q+'”':"");
+    $("#results").innerHTML=list.length?list.map(function(o){return A.toolCard(o.t,{compare:1})}).join(""):'<div class="empty" style="grid-column:1/-1">No matches. Try fewer filters or <a class="grad-text" href="solutions.html">ask an expert</a>.</div>';
+    syncCmp()}
+  var cmp=[];
+  function syncCmp(){$$("[data-cmp]").forEach(function(c){c.checked=cmp.indexOf(c.getAttribute("data-cmp"))>-1});
+    $("#cmpBar").classList.toggle("show",cmp.length>0);$("#cmpTxt").textContent=cmp.length+"/3 selected";$("#cmpGo").href="compare.html?t="+cmp.join(",")}
+  document.addEventListener("change",function(e){var s=e.target.getAttribute&&e.target.getAttribute("data-cmp");
+    if(s){var i=cmp.indexOf(s);if(e.target.checked){if(cmp.length>=3){e.target.checked=false;A.toast("Compare up to 3 tools");return}cmp.push(s)}else if(i>-1)cmp.splice(i,1);syncCmp()}
+    else if(e.target.closest(".filters")||e.target.id==="sort")render()});
+  $("#cmpClear").onclick=function(){cmp=[];syncCmp()};
+  var tmr;$("#q").addEventListener("input",function(){clearTimeout(tmr);tmr=setTimeout(render,120)});
+  $("#fReset").onclick=function(){$$(".filters input").forEach(function(i){i.checked=false});$("#q").value="";render()};
+  document.addEventListener("keydown",function(e){if(e.key==="/"&&document.activeElement.tagName!=="INPUT"){e.preventDefault();$("#q").focus()}});
+  render();
+});
+</script>
+</body>
+</html>
