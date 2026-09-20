@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Learn AI — Free Videos, Guides & AI Glossary | 42i</title>
+<meta name="description" content="Learn AI for free: the best video explainers, practical 'best AI tools for' guides and a plain-English AI glossary.">
+<meta name="theme-color" content="#7c5cff"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem("42i:theme");if(t)document.documentElement.setAttribute("data-theme",JSON.parse(t))}catch(e){}</script>
+</head>
+<body>
+<div class="domain-bar"><a href="https://web.works/contact" target="_blank" rel="noopener">Contact, if you are interested in this website/domain name</a></div>
+<header id="site-header"></header>
+<main>
+<section class="page-hero"><div class="container">
+  <div class="breadcrumb"><a href="index.html">Home</a> / Learn</div>
+  <h1>Learn AI, <span class="grad-text">the fast way.</span></h1>
+  <p class="lead">Hand-picked videos, practical buying guides and a jargon-free glossary. Go from curious to capable in a weekend.</p>
+  <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap"><a class="btn btn-primary" href="#videos">▶ Watch</a><a class="btn btn-ghost" href="#guides">Guides</a><a class="btn btn-ghost" href="#glossary">Glossary</a></div>
+</div></section>
+<section class="section-sm" id="videos"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Video library</span><h2>Best AI explainers</h2></div><a class="btn btn-ghost btn-sm" id="ytBtn" target="_blank" rel="noopener">▶ Subscribe to 42i on YouTube</a></div>
+  <div class="grid g2" id="vGrid"></div>
+</div></section>
+<div class="container"><div class="ad-slot" data-ad="banner"></div></div>
+<section class="section" id="guides"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Guides</span><h2>Best AI tools for…</h2><p>Updated buying guides for every job. Each links to curated, comparable options.</p></div></div>
+  <div class="grid g3" id="gGrid"></div>
+</div></section>
+<section class="section" id="glossary"><div class="container" style="max-width:900px">
+  <div class="center" style="margin-bottom:28px"><span class="eyebrow">Glossary</span><h2>AI terms in plain English</h2></div>
+  <input id="gq" type="search" placeholder="Search terms…" aria-label="Search glossary" style="margin-bottom:18px">
+  <div class="faq" id="glo"></div>
+</div></section>
+<section class="section-sm"><div class="container"><div class="cta-band"><div><h2>Want your team trained on AI?</h2><p>Live workshops and custom playbooks for your tools and workflows — delivered by vetted AI trainers.</p></div><div><a class="btn btn-white" href="solutions.html?need=training">Request a training quote</a></div></div></div></section>
+</main>
+<footer id="site-footer"></footer>
+<script src="assets/js/config.js"></script><script src="assets/js/data.js"></script><script src="assets/js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  var A=APP,$=A.$;$("#ytBtn").href=SITE.youtubeChannel;
+  $("#vGrid").innerHTML=VIDEOS.map(function(v){return '<div><div class="yt" data-id="'+v.id+'" data-title="'+A.esc(v.title)+'"></div><div class="video-meta"><b>'+A.esc(v.title)+'</b><span class="small muted">'+A.esc(v.by)+'</span></div></div>'}).join("");A.videos();
+  $("#gGrid").innerHTML=CATEGORIES.map(function(c){var n=TOOLS.filter(function(t){return t.cat===c.id});return '<a class="card" href="tools.html?cat='+c.id+'"><span class="ico">'+c.icon+'</span><h3>Best AI tools for '+c.name+' ('+new Date().getFullYear()+')</h3><p>'+c.blurb+' Top picks: '+n.slice(0,3).map(function(t){return A.esc(t.name)}).join(", ")+'.</p></a>'}).join("");
+  function g(){var q=$("#gq").value.toLowerCase();$("#glo").innerHTML=GLOSSARY.filter(function(x){return(x[0]+x[1]).toLowerCase().indexOf(q)>-1}).map(function(x){return '<details><summary>'+A.esc(x[0])+'</summary><p>'+A.esc(x[1])+'</p></details>'}).join("")}
+  $("#gq").oninput=g;g();
+  var ld={"@context":"https://schema.org","@type":"DefinedTermSet","name":"42i AI Glossary","hasDefinedTerm":GLOSSARY.map(function(x){return{"@type":"DefinedTerm","name":x[0],"description":x[1]}})};
+  var s=document.createElement("script");s.type="application/ld+json";s.textContent=JSON.stringify(ld);document.head.appendChild(s);
+});
+</script>
+</body>
+</html>

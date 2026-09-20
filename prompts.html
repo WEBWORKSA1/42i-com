@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free AI Prompt Library — Copy-Paste Prompts for ChatGPT, Claude & Midjourney | 42i</title>
+<meta name="description" content="Free, tested AI prompts for business, marketing, sales, coding, images, productivity and learning. Fill in the blanks, copy and paste into any AI.">
+<meta name="theme-color" content="#7c5cff"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem("42i:theme");if(t)document.documentElement.setAttribute("data-theme",JSON.parse(t))}catch(e){}</script>
+</head>
+<body>
+<div class="domain-bar"><a href="https://web.works/contact" target="_blank" rel="noopener">Contact, if you are interested in this website/domain name</a></div>
+<header id="site-header"></header>
+<main>
+<section class="page-hero"><div class="container">
+  <div class="breadcrumb"><a href="index.html">Home</a> / Prompts</div>
+  <h1>Free AI <span class="grad-text">Prompt Library</span></h1>
+  <p class="lead">Battle-tested prompts that work in ChatGPT, Claude, Gemini and image generators. Replace the <mark style="background:rgba(124,92,255,.3);color:inherit;padding:0 4px;border-radius:4px">[BRACKETS]</mark>, copy, done.</p>
+  <div class="toolbar" style="margin-top:22px"><input id="pq" type="search" placeholder="Search prompts…" aria-label="Search prompts"></div>
+  <div class="chips" id="pCats" style="justify-content:flex-start"></div>
+</div></section>
+<section class="section-sm"><div class="container"><div class="grid g3" id="pGrid"></div><div class="ad-slot" data-ad="inFeed"></div></div></section>
+<section class="section"><div class="container two-col">
+  <div><span class="eyebrow">Community</span><h2>Share a prompt, get featured</h2><p style="margin-top:12px">Got a prompt that consistently delivers? Submit it. The best ones are published with your name and link, and top contributors win monthly prizes.</p>
+    <ul class="list-check" style="margin-top:18px"><li>Byline + backlink to your site</li><li>Monthly “Prompt of the Month” prize</li><li>Feature in the weekly brief</li></ul></div>
+  <div class="form-card">
+    <form class="form" data-form="Prompt submission"><input class="hp" name="_honey" tabindex="-1" autocomplete="off">
+      <div class="row"><label class="f">Name<input name="name" required></label><label class="f">Email<input type="email" name="email" required></label></div>
+      <div class="row"><label class="f">Prompt title<input name="title" required></label><label class="f">Category<select name="category"><option>Business</option><option>Marketing</option><option>Sales</option><option>Writing</option><option>Coding</option><option>Image</option><option>Productivity</option><option>Learning</option><option>Career</option><option>Automation</option></select></label></div>
+      <label class="f">The prompt<textarea name="prompt" required></textarea></label>
+      <label class="f">Your website / social (for credit)<input name="credit_url" type="url" placeholder="https://"></label>
+      <button class="btn btn-primary">Submit prompt</button></form>
+    <div class="form-success"><div class="big">🙌</div><h3>Thanks! We review submissions weekly.</h3></div>
+  </div>
+</div></section>
+</main>
+<footer id="site-footer"></footer>
+<script src="assets/js/config.js"></script><script src="assets/js/data.js"></script><script src="assets/js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  var A=APP,$=A.$,cur="All",cats=["All"];PROMPTS.forEach(function(p){if(cats.indexOf(p.cat)<0)cats.push(p.cat)});
+  $("#pCats").innerHTML=cats.map(function(c){return '<button class="chip'+(c==="All"?" active":"")+'" data-c="'+c+'">'+c+'</button>'}).join("");
+  $("#pCats").onclick=function(e){var c=e.target.getAttribute("data-c");if(!c)return;cur=c;A.$$("#pCats .chip").forEach(function(x){x.classList.toggle("active",x===e.target)});draw()};
+  function hl(s){return A.esc(s).replace(/\[([^\]]+)\]/g,"<mark>[$1]</mark>")}
+  function draw(){var q=$("#pq").value.toLowerCase();var list=PROMPTS.filter(function(p){return(cur==="All"||p.cat===cur)&&(p.title+" "+p.text).toLowerCase().indexOf(q)>-1});
+    $("#pGrid").innerHTML=list.map(function(p){return '<div class="card prompt-card"><span class="badge">'+p.cat+'</span><h3 style="margin:10px 0">'+A.esc(p.title)+'</h3><pre>'+hl(p.text)+'</pre><div style="display:flex;gap:8px;margin-top:12px"><button class="btn btn-primary btn-sm" data-copy>Copy</button><a class="btn btn-ghost btn-sm" href="https://chatgpt.com/?q='+encodeURIComponent(p.text)+'" target="_blank" rel="noopener">Try in ChatGPT ↗</a></div></div>'}).join("")||'<div class="empty" style="grid-column:1/-1">No prompts match.</div>'}
+  $("#pq").oninput=draw;draw();
+});
+</script>
+</body>
+</html>

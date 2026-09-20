@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Tool Review, Pricing & Alternatives | 42i</title>
+<meta name="description" content="Features, pricing model, platforms, best use cases and top alternatives for this AI tool — on 42i, the answer engine for AI.">
+<meta name="theme-color" content="#7c5cff"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem("42i:theme");if(t)document.documentElement.setAttribute("data-theme",JSON.parse(t))}catch(e){}</script>
+</head>
+<body>
+<div class="domain-bar"><a href="https://web.works/contact" target="_blank" rel="noopener">Contact, if you are interested in this website/domain name</a></div>
+<header id="site-header"></header>
+<main>
+<section class="page-hero"><div class="container" id="toolHead"></div></section>
+<section class="section-sm">
+  <div class="container two-col">
+    <div>
+      <div class="card" id="toolBody"></div>
+      <div class="ad-slot" data-ad="inFeed"></div>
+      <div class="card"><h3>▶ Video tutorials</h3><p style="margin:8px 0 14px">Learn this tool fast with the most-watched walkthroughs.</p><a class="btn btn-ghost btn-sm" id="ytSearch" target="_blank" rel="noopener">Watch tutorials on YouTube ↗</a></div>
+      <div class="section-head" style="margin-top:40px"><div><span class="eyebrow">Alternatives</span><h2 id="altTitle" style="font-size:1.6rem">Similar tools</h2></div></div>
+      <div class="grid g2" id="alts"></div>
+    </div>
+    <aside>
+      <div class="form-card">
+        <span class="eyebrow">Need this set up for you?</span>
+        <h3 id="implTitle">Get expert help implementing it</h3>
+        <p class="small" style="margin:8px 0 14px">A vetted specialist can set up, integrate and train your team — request a free quote.</p>
+        <form class="form" data-form="Lead: Implementation help (tool page)">
+          <input class="hp" name="_honey" tabindex="-1" autocomplete="off"><input type="hidden" name="tool" id="implTool">
+          <input name="name" required placeholder="Name" aria-label="Name">
+          <input type="email" name="email" required placeholder="Work email" aria-label="Email">
+          <input name="company" placeholder="Company (optional)" aria-label="Company">
+          <select name="team_size" aria-label="Team size"><option value="">Team size</option><option>Just me</option><option>2–10</option><option>11–50</option><option>51–200</option><option>200+</option></select>
+          <button class="btn btn-primary btn-block">Get a free quote</button>
+        </form>
+        <div class="form-success"><div class="big">✅</div><h3>Thanks! We’ll reply within 1 business day.</h3></div>
+      </div>
+      <div class="ad-slot" data-ad="sidebar"></div>
+      <div class="card" style="margin-top:18px"><h3>Is this your tool?</h3><p class="small" style="margin:8px 0 14px">Claim the listing to update details, add a video and unlock a Featured spot.</p>
+        <details><summary class="btn btn-ghost btn-sm">Claim this listing</summary>
+          <form class="form" data-form="Claim listing" style="margin-top:12px"><input class="hp" name="_honey" tabindex="-1" autocomplete="off"><input type="hidden" name="tool" id="claimTool">
+            <input name="name" required placeholder="Your name" aria-label="Name"><input type="email" name="email" required placeholder="Email at the product's domain" aria-label="Email"><input name="role" placeholder="Your role" aria-label="Role"><button class="btn btn-primary btn-sm">Request ownership</button></form>
+          <div class="form-success"><b>Request received — we’ll verify within 48h.</b></div>
+        </details>
+        <a class="btn btn-gold btn-sm btn-block" href="submit.html#plans" style="margin-top:12px">★ Get Featured</a>
+      </div>
+    </aside>
+  </div>
+</section>
+</main>
+<footer id="site-footer"></footer>
+<script src="assets/js/config.js"></script><script src="assets/js/data.js"></script><script src="assets/js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  var A=APP,$=A.$,slug=new URLSearchParams(location.search).get("t"),t=TOOLS.filter(function(x){return x.slug===slug})[0];
+  if(!t){$("#toolHead").innerHTML='<h1>Tool not found</h1><p class="lead">It may have moved. <a class="grad-text" href="tools.html">Browse all AI tools →</a></p>';return}
+  var cat=A.catName(t.cat),yr=new Date().getFullYear();
+  document.title=t.name+" Review ("+yr+"): Features, Pricing & Alternatives | 42i";
+  document.querySelector('meta[name=description]').setAttribute("content",t.name+": "+t.tagline+" Pricing model, platforms, best use cases and top alternatives.");
+  var ld={"@context":"https://schema.org","@type":"SoftwareApplication","name":t.name,"applicationCategory":cat,"operatingSystem":t.platforms.join(", "),"url":t.url,"description":t.tagline,"offers":{"@type":"Offer","price":t.pricing==="Paid"?undefined:"0","priceCurrency":"USD"}};
+  var s=document.createElement("script");s.type="application/ld+json";s.textContent=JSON.stringify(ld);document.head.appendChild(s);
+  $("#toolHead").innerHTML='<div class="breadcrumb"><a href="index.html">Home</a> / <a href="tools.html">AI Tools</a> / <a href="tools.html?cat='+t.cat+'">'+cat+'</a> / '+A.esc(t.name)+'</div>'+
+   '<div class="tool-top" style="gap:18px">'+A.logo(t).replace("tool-logo","tool-logo\" style=\"width:72px;height:72px")+'<div><h1 style="font-size:clamp(1.8rem,4vw,3rem)">'+A.esc(t.name)+'</h1><p class="lead" style="margin-top:6px">'+A.esc(t.tagline)+'</p></div></div>'+
+   '<div class="tool-meta" style="margin:18px 0"><span class="badge '+t.pricing.toLowerCase()+'">'+t.pricing+'</span>'+(t.featured?'<span class="badge feat">★ Editor’s pick</span>':"")+'<span class="badge">'+cat+'</span></div>'+
+   '<div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="'+A.affiliate(t.url)+'" target="_blank" rel="noopener sponsored">Visit '+A.esc(t.name)+' ↗</a><button class="btn btn-ghost save-btn'+(A.saved().indexOf(t.slug)>-1?" saved":"")+'" style="width:auto;padding:0 18px" data-save="'+t.slug+'">♥ Save</button><a class="btn btn-ghost" href="compare.html?t='+t.slug+'">⇄ Compare</a><button class="btn btn-ghost" data-copy data-copy-text="'+location.href+'">🔗 Share</button></div>';
+  $("#toolBody").innerHTML='<h2 style="font-size:1.4rem">What is '+A.esc(t.name)+'?</h2><p style="margin:10px 0 20px">'+A.esc(t.name)+' is a '+t.pricing.toLowerCase()+' AI tool in the '+cat+' category. '+A.esc(t.tagline)+' It is best for: <b>'+A.esc(t.bestFor)+'</b>.</p>'+
+   '<div class="table-wrap"><table><tr><th>Pricing model</th><td>'+t.pricing+(t.pricing==="Freemium"?" — free plan with paid upgrades":t.pricing==="Free"?" — free to use":" — paid plans (trials may be available)")+'</td></tr><tr><th>Platforms</th><td>'+t.platforms.join(", ")+'</td></tr><tr><th>Best for</th><td>'+A.esc(t.bestFor)+'</td></tr><tr><th>Key capabilities</th><td>'+t.tags.map(A.esc).join(", ")+'</td></tr><tr><th>Website</th><td><a class="grad-text" href="'+A.affiliate(t.url)+'" target="_blank" rel="noopener sponsored">'+A.host(t.url)+'</a></td></tr></table></div>'+
+   '<p class="small muted" style="margin-top:14px">Pricing and features change often — always confirm on the official site. Some links are affiliate links.</p>';
+  $("#ytSearch").href="https://www.youtube.com/results?search_query="+encodeURIComponent(t.name+" tutorial");
+  $("#implTitle").textContent="Get expert help implementing "+t.name;$("#implTool").value=t.name;$("#claimTool").value=t.name;
+  var alts=TOOLS.filter(function(x){return x.cat===t.cat&&x.slug!==t.slug}).slice(0,6);
+  $("#altTitle").textContent="Top "+t.name+" alternatives";
+  $("#alts").innerHTML=alts.map(function(x){return A.toolCard(x)}).join("")||'<p>No alternatives listed yet.</p>';
+});
+</script>
+</body>
+</html>

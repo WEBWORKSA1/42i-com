@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Compare AI Tools Side by Side | 42i</title>
+<meta name="description" content="Compare up to 3 AI tools side by side: pricing model, platforms, best use cases and capabilities.">
+<meta name="theme-color" content="#7c5cff"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem("42i:theme");if(t)document.documentElement.setAttribute("data-theme",JSON.parse(t))}catch(e){}</script>
+</head>
+<body>
+<div class="domain-bar"><a href="https://web.works/contact" target="_blank" rel="noopener">Contact, if you are interested in this website/domain name</a></div>
+<header id="site-header"></header>
+<main>
+<section class="page-hero"><div class="container">
+  <div class="breadcrumb"><a href="index.html">Home</a> / Compare</div>
+  <h1 id="cTitle">Compare <span class="grad-text">AI tools</span></h1>
+  <p class="lead">Pick up to three tools and see how they stack up.</p>
+  <div class="toolbar" style="margin-top:22px"><select id="s1" aria-label="Tool 1"></select><select id="s2" aria-label="Tool 2"></select><select id="s3" aria-label="Tool 3"></select></div>
+</div></section>
+<section class="section-sm"><div class="container"><div class="table-wrap" id="cmpTable"></div><div class="ad-slot" data-ad="banner"></div>
+  <div class="cta-band"><div><h2>Still undecided?</h2><p>Tell us your use case and budget — an expert will recommend the right stack in 48h. Free.</p></div><div><a class="btn btn-white" href="solutions.html">Get a free recommendation</a></div></div>
+</div></section>
+</main>
+<footer id="site-footer"></footer>
+<script src="assets/js/config.js"></script><script src="assets/js/data.js"></script><script src="assets/js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  var A=APP,$=A.$,sel=(new URLSearchParams(location.search).get("t")||"chatgpt,claude,gemini").split(",");
+  var opts='<option value="">— Choose a tool —</option>'+TOOLS.slice().sort(function(a,b){return a.name.localeCompare(b.name)}).map(function(t){return '<option value="'+t.slug+'">'+A.esc(t.name)+'</option>'}).join("");
+  ["s1","s2","s3"].forEach(function(id,i){$("#"+id).innerHTML=opts;$("#"+id).value=sel[i]||"";$("#"+id).onchange=draw});
+  function draw(){var ts=["s1","s2","s3"].map(function(id){return $("#"+id).value}).filter(Boolean).map(function(s){return TOOLS.filter(function(t){return t.slug===s})[0]}).filter(Boolean);
+    history.replaceState(null,"","?t="+ts.map(function(t){return t.slug}).join(","));
+    if(ts.length>1){$("#cTitle").innerHTML=ts.map(function(t){return A.esc(t.name)}).join(' <span class="grad-text">vs</span> ');document.title=ts.map(function(t){return t.name}).join(" vs ")+" — AI Tool Comparison | 42i"}
+    if(!ts.length){$("#cmpTable").innerHTML='<div class="empty">Choose tools above to compare.</div>';return}
+    var row=function(label,f){return '<tr><th>'+label+'</th>'+ts.map(function(t){return '<td>'+f(t)+'</td>'}).join("")+'</tr>'};
+    $("#cmpTable").innerHTML='<table><tr><th></th>'+ts.map(function(t){return '<th><a href="tool.html?t='+t.slug+'" class="tool-top">'+A.logo(t)+A.esc(t.name)+'</a></th>'}).join("")+'</tr>'+
+      row("Category",function(t){return A.catName(t.cat)})+row("Pricing",function(t){return '<span class="badge '+t.pricing.toLowerCase()+'">'+t.pricing+'</span>'})+
+      row("Summary",function(t){return A.esc(t.tagline)})+row("Best for",function(t){return A.esc(t.bestFor)})+row("Platforms",function(t){return t.platforms.join(", ")})+
+      row("Capabilities",function(t){return t.tags.map(A.esc).join(", ")})+row("",function(t){return '<a class="btn btn-primary btn-sm" href="'+A.affiliate(t.url)+'" target="_blank" rel="noopener sponsored">Visit ↗</a>'})+'</table>'}
+  draw();
+});
+</script>
+</body>
+</html>
