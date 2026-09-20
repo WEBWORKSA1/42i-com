@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Support 42i — Donate to Keep AI Discovery Free & Independent</title>
+<meta name="description" content="Support 42i with a one-time or monthly contribution. Your support funds operations, contest prizes, free guides, promotion and hiring creators.">
+<meta name="theme-color" content="#7c5cff"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem("42i:theme");if(t)document.documentElement.setAttribute("data-theme",JSON.parse(t))}catch(e){}</script>
+</head>
+<body>
+<div class="domain-bar"><a href="https://web.works/contact" target="_blank" rel="noopener">Contact, if you are interested in this website/domain name</a></div>
+<header id="site-header"></header>
+<main>
+<section class="hero" style="padding-bottom:30px"><div class="container two-col" style="text-align:left;align-items:start">
+  <div>
+    <span class="eyebrow">💜 Support 42i</span>
+    <h1 style="font-size:clamp(2rem,4.6vw,3.4rem)">Keep AI discovery <span class="grad-text">free, honest and independent.</span></h1>
+    <p class="lead" style="margin-top:16px">42i is free for everyone. Your contribution pays for hosting and operations, contest prizes, new guides and videos, promotion, and hiring the creators who make it all.</p>
+    <h3 style="margin:28px 0 12px">Where your support goes</h3>
+    <div class="form" id="alloc"></div>
+  </div>
+  <div class="form-card">
+    <div class="toggle" id="freq" style="width:100%;margin-bottom:18px"><button class="active" data-f="once" style="flex:1">One-time</button><button data-f="monthly" style="flex:1">Monthly</button></div>
+    <div class="amounts" id="amts"><button data-a="5">$5</button><button data-a="21">$21</button><button data-a="42" class="active">$42</button><button data-a="100">$100</button></div>
+    <label class="f" style="display:grid;gap:6px;margin-top:12px;font-size:.87rem;font-weight:600">Or enter an amount (USD)<input id="custom" type="number" min="1" placeholder="Custom amount"></label>
+    <label class="f" style="display:grid;gap:6px;margin-top:12px;font-size:.87rem;font-weight:600">Direct it to (optional)<select id="purpose"><option>Where it’s needed most</option><option>Contest prizes</option><option>Free guides & videos</option><option>Operations & hosting</option><option>Hiring creators</option><option>Promotion & marketing</option></select></label>
+    <button class="btn btn-primary btn-block" id="donateBtn" style="margin-top:18px">Donate $42 with PayPal</button>
+    <div id="altPay" style="display:grid;gap:10px;margin-top:10px"></div>
+    <p class="small muted center" style="margin-top:12px">🔒 Secure checkout by PayPal. Cards accepted, no account needed. Monthly supporters can cancel anytime.</p>
+  </div>
+</div></section>
+
+<section class="section-sm"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Membership</span><h2>Become a supporter</h2><p>Recurring support gets you perks — and our eternal gratitude.</p></div></div>
+  <div class="grid g4">
+    <div class="card price-card"><h3>☕ Supporter</h3><div class="price">$5<small>/mo</small></div><ul><li>Supporter badge on our wall</li><li>Monthly thank-you note</li></ul><button class="btn btn-ghost btn-block" data-tier="5">Support monthly</button></div>
+    <div class="card price-card"><h3>🛠 Builder</h3><div class="price">$21<small>/mo</small></div><ul><li>Everything in Supporter</li><li>Early access to new guides</li><li>Vote on next contest theme</li></ul><button class="btn btn-ghost btn-block" data-tier="21">Support monthly</button></div>
+    <div class="card price-card pop"><span class="ribbon">THE ANSWER</span><h3>🌌 Patron</h3><div class="price">$42<small>/mo</small></div><ul><li>Everything in Builder</li><li>Name in the newsletter</li><li>Quarterly AI strategy AMA</li></ul><button class="btn btn-primary btn-block" data-tier="42">Support monthly</button></div>
+    <div class="card price-card"><h3>🚀 Champion</h3><div class="price">$420<small> once</small></div><ul><li>Logo/link on Supporters wall</li><li>Named contest prize</li><li>Shout-out on YouTube</li></ul><button class="btn btn-gold btn-block" data-once="420">Become a Champion</button></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="container two-col">
+  <div><span class="eyebrow">Corporate & in-kind</span><h2>Sponsor, partner or donate credits</h2><p style="margin:12px 0 18px">Companies can support 42i with sponsorships, prize money, software credits or promotion. We’ll recognise you on our Supporters wall.</p>
+    <h3 style="margin-bottom:12px">Other ways to help — free</h3>
+    <ul class="list-check"><li>Share 42i with a friend or your team</li><li>Subscribe to our YouTube channel</li><li>Submit a prompt or suggest a tool</li><li>Join the weekly brief</li></ul>
+    <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap"><button class="btn btn-ghost btn-sm" data-copy data-copy-text="https://42i.com — the answer engine for AI">🔗 Copy share link</button><a class="btn btn-ghost btn-sm" id="ytBtn" target="_blank" rel="noopener">▶ Subscribe</a></div></div>
+  <div class="form-card">
+    <form class="form" data-form="Sponsorship / in-kind support offer"><input class="hp" name="_honey" tabindex="-1" autocomplete="off">
+      <div class="row"><label class="f">Name <span class="req">*</span><input name="name" required></label><label class="f">Email <span class="req">*</span><input name="email" type="email" required></label></div>
+      <label class="f">Organisation<input name="company"></label>
+      <label class="f">Type of support<select name="support_type"><option>Financial sponsorship</option><option>Contest prize</option><option>Software credits / licences</option><option>Promotion / media partnership</option><option>Other</option></select></label>
+      <label class="f">Message<textarea name="message" style="min-height:90px"></textarea></label>
+      <button class="btn btn-primary btn-block">Offer support</button></form>
+    <div class="form-success"><div class="big">💜</div><h3>Thank you! We’ll be in touch within 2 days.</h3></div>
+  </div>
+</div></section>
+
+<section class="section-sm"><div class="container center"><span class="eyebrow">Supporters wall</span><h2>Thank you 💜</h2><p style="max-width:620px;margin:12px auto 0">Supporters who opt in are listed here with a link. Be the first name on the wall.</p></div></section>
+</main>
+<footer id="site-footer"></footer>
+<script src="assets/js/config.js"></script><script src="assets/js/data.js"></script><script src="assets/js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  var A=APP,$=A.$,$$=A.$$,S=SITE,amt=42,freq="once";$("#ytBtn").href=S.youtubeChannel;
+  $("#alloc").innerHTML=[["Operations & hosting",20],["Contest prizes",30],["Free guides & videos",25],["Hiring creators",15],["Promotion & marketing",10]].map(function(x){return '<div><div style="display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:6px"><span>'+x[0]+'</span><b>'+x[1]+'%</b></div><div class="progress"><i style="width:'+x[1]+'%"></i></div></div>'}).join("");
+  function label(){$("#donateBtn").textContent=(freq==="monthly"?"Give $"+amt+"/month":"Donate $"+amt)+" with PayPal"}
+  $$("#amts button").forEach(function(b){b.onclick=function(){$$("#amts button").forEach(function(x){x.classList.remove("active")});b.classList.add("active");amt=+b.getAttribute("data-a");$("#custom").value="";label()}});
+  $("#custom").oninput=function(){var v=Math.max(1,Math.round(+this.value||0));if(v){amt=v;$$("#amts button").forEach(function(x){x.classList.remove("active")});label()}};
+  $$("#freq button").forEach(function(b){b.onclick=function(){$$("#freq button").forEach(function(x){x.classList.remove("active")});b.classList.add("active");freq=b.getAttribute("data-f");label()}});
+  function pay(a,f){var item="Support 42i"+(f==="monthly"?" (monthly)":"")+" — "+$("#purpose").value;
+    var url="https://www.paypal.com/donate?business="+encodeURIComponent(A.addr())+"&currency_code=USD&amount="+a+"&item_name="+encodeURIComponent(item)+"&no_recurring="+(f==="monthly"?"0":"1");
+    if(window.gtag)gtag("event","donate_click",{value:a,currency:"USD"});window.open(url,"_blank","noopener")}
+  $("#donateBtn").onclick=function(){pay(amt,freq)};
+  $$("[data-tier]").forEach(function(b){b.onclick=function(){pay(+b.getAttribute("data-tier"),"monthly")}});
+  $$("[data-once]").forEach(function(b){b.onclick=function(){pay(+b.getAttribute("data-once"),"once")}});
+  var alt="";if(S.stripeDonateUrl)alt+='<a class="btn btn-ghost btn-block" href="'+S.stripeDonateUrl+'" target="_blank" rel="noopener">💳 Pay with card (Stripe)</a>';
+  if(S.buyMeACoffeeUrl)alt+='<a class="btn btn-ghost btn-block" href="'+S.buyMeACoffeeUrl+'" target="_blank" rel="noopener">☕ Buy us a coffee</a>';$("#altPay").innerHTML=alt;
+});
+</script>
+</body>
+</html>

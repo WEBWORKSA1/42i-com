@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>42 Days of AI — AI Contest with Cash Prizes | 42i</title>
+<meta name="description" content="Build, create or automate something with AI in 42 days and win cash prizes, featured listings and a spotlight on 42i. Enter free or sponsor a prize.">
+<meta name="theme-color" content="#7c5cff"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem("42i:theme");if(t)document.documentElement.setAttribute("data-theme",JSON.parse(t))}catch(e){}</script>
+</head>
+<body>
+<div class="domain-bar"><a href="https://web.works/contact" target="_blank" rel="noopener">Contact, if you are interested in this website/domain name</a></div>
+<header id="site-header"></header>
+<main>
+<section class="hero"><div class="container">
+  <span class="eyebrow">🏆 Contest</span>
+  <h1 id="cName">42 Days of AI</h1>
+  <p class="lead" id="cTheme"></p>
+  <div class="countdown" id="cd" style="justify-content:center;margin-top:28px"></div>
+  <div style="display:flex;gap:10px;justify-content:center;margin-top:26px;flex-wrap:wrap"><a class="btn btn-gold" href="#enter">Enter free →</a><a class="btn btn-ghost" href="#host">Sponsor a prize</a></div>
+</div></section>
+<section class="section-sm"><div class="container two-col">
+  <div class="card"><h2 style="font-size:1.6rem;margin-bottom:10px">🏆 Prizes</h2><div id="prizes"></div></div>
+  <div>
+    <h2 style="font-size:1.6rem">How it works</h2>
+    <div class="grid process" style="margin-top:16px;gap:12px">
+      <div class="card"><h3>Register</h3><p>Sign up free, solo or as a team of up to 4.</p></div>
+      <div class="card"><h3>Build in 42 days</h3><p>An app, an automation, a short film, a song, an agent — anything made with AI.</p></div>
+      <div class="card"><h3>Submit</h3><p>Share a link, a 2-minute demo video and a short write-up.</p></div>
+      <div class="card"><h3>Win</h3><p>Judges score it; the community votes for Community Choice.</p></div>
+    </div>
+  </div>
+</div></section>
+<section class="section-sm"><div class="container">
+  <div class="grid g3">
+    <div class="card"><h3>⚖️ Judging criteria</h3><ul class="list-check" style="margin-top:12px"><li>Usefulness & impact — 35%</li><li>Creativity — 25%</li><li>Execution quality — 25%</li><li>Storytelling / demo — 15%</li></ul></div>
+    <div class="card"><h3>📜 Key rules</h3><ul class="list-check" style="margin-top:12px"><li>Free to enter; open worldwide where legal</li><li>Work must be created during the contest window</li><li>You keep full ownership of your project</li><li>One entry per person or team</li></ul><a class="grad-text small" href="legal.html#contest">Full official rules →</a></div>
+    <div class="card"><h3>📅 Season calendar</h3><ul class="list-check" style="margin-top:12px"><li id="dOpen"></li><li id="dClose"></li><li>Finalists: 2 weeks after close</li><li>Winners: live on YouTube & newsletter</li></ul></div>
+  </div>
+  <div class="ad-slot" data-ad="banner"></div>
+</div></section>
+<section class="section" id="enter"><div class="container two-col">
+  <div><span class="eyebrow">Register</span><h2>Enter the contest</h2><p style="margin:12px 0 18px">Register now to get the kickoff kit, partner perks and deadline reminders. You’ll submit your project link before the deadline.</p>
+    <ul class="list-check"><li>Free AI tool credits from partners (when available)</li><li>Finalists featured to the 42i audience</li><li>Every valid entry gets a gallery page</li></ul></div>
+  <div class="form-card">
+    <form class="form" data-form="Contest entry"><input class="hp" name="_honey" tabindex="-1" autocomplete="off">
+      <div class="row"><label class="f">Full name <span class="req">*</span><input name="name" required></label><label class="f">Email <span class="req">*</span><input name="email" type="email" required></label></div>
+      <div class="row"><label class="f">Team name<input name="team"></label><label class="f">Team size<select name="team_size"><option>Solo</option><option>2</option><option>3</option><option>4</option></select></label></div>
+      <label class="f">Track<select name="track"><option>Build (apps, agents, tools)</option><option>Create (video, image, music)</option><option>Automate (business workflows)</option></select></label>
+      <div class="row"><label class="f">Country<input name="country"></label><label class="f">Project link (if ready)<input name="project_url" type="url" placeholder="https://"></label></div>
+      <label class="f">Idea in one paragraph<textarea name="idea" style="min-height:90px"></textarea></label>
+      <label class="check"><input type="checkbox" required> I’m 18+ and agree to the official rules.</label>
+      <button class="btn btn-gold btn-block">Register my entry 🏆</button></form>
+    <div class="form-success"><div class="big">🎉</div><h3>You’re in! Watch your inbox for the kickoff kit.</h3></div>
+  </div>
+</div></section>
+<section class="section" id="host"><div class="container two-col">
+  <div><span class="eyebrow">For brands</span><h2>Sponsor a prize or host a challenge</h2><p style="margin:12px 0 18px">Put your AI product in the hands of motivated builders and creators. Sponsors get logo placement, a branded challenge track, winners’ content and usage data from participants who opt in.</p>
+    <ul class="list-check"><li>Branded track (e.g. “Best use of YourTool”)</li><li>Logo on all contest pages & emails</li><li>Mention in the winners’ YouTube livestream</li></ul></div>
+  <div class="form-card">
+    <form class="form" data-form="Contest sponsorship / host challenge"><input class="hp" name="_honey" tabindex="-1" autocomplete="off">
+      <div class="row"><label class="f">Name <span class="req">*</span><input name="name" required></label><label class="f">Work email <span class="req">*</span><input name="email" type="email" required></label></div>
+      <div class="row"><label class="f">Company <span class="req">*</span><input name="company" required></label><label class="f">Prize budget<select name="prize_budget"><option>$500–$1,000</option><option>$1,000–$5,000</option><option>$5,000–$25,000</option><option>$25,000+</option><option>In-kind (credits/licences)</option></select></label></div>
+      <label class="f">What would you like to achieve?<textarea name="message" style="min-height:90px"></textarea></label>
+      <button class="btn btn-primary btn-block">Become a sponsor</button></form>
+    <div class="form-success"><div class="big">🤝</div><h3>Thanks! We’ll send the sponsorship deck shortly.</h3></div>
+  </div>
+</div></section>
+</main>
+<footer id="site-footer"></footer>
+<script src="assets/js/config.js"></script><script src="assets/js/data.js"></script><script src="assets/js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  var $=APP.$,C=SITE.contest,fmt=function(d){return new Date(d).toLocaleDateString(undefined,{year:"numeric",month:"long",day:"numeric"})};
+  $("#cName").textContent=C.name;$("#cTheme").textContent=C.theme+".";$("#dOpen").textContent="Opens: "+fmt(C.opens);$("#dClose").textContent="Deadline: "+fmt(C.closes);
+  $("#prizes").innerHTML=C.prizes.map(function(p){return '<div class="prize"><b>'+p.place+'</b><span class="muted small" style="text-align:right">'+p.reward+'</span></div>'}).join("");
+  var ld={"@context":"https://schema.org","@type":"Event","name":C.name,"startDate":C.opens,"endDate":C.closes,"eventAttendanceMode":"https://schema.org/OnlineEventAttendanceMode","location":{"@type":"VirtualLocation","url":location.href},"organizer":{"@type":"Organization","name":"42i","url":"https://42i.com"},"description":C.theme};
+  var s=document.createElement("script");s.type="application/ld+json";s.textContent=JSON.stringify(ld);document.head.appendChild(s);
+  function cd(){var now=Date.now(),o=new Date(C.opens).getTime(),c=new Date(C.closes).getTime();
+    if(now>c){$("#cd").innerHTML='<p>This season has closed — winners coming soon. Register below for the next season.</p>';return}
+    var d=(now<o?o:c)-now,u=[[Math.floor(d/864e5),"days"],[Math.floor(d/36e5)%24,"hours"],[Math.floor(d/6e4)%60,"mins"],[Math.floor(d/1e3)%60,"secs"]];
+    $("#cd").innerHTML='<p class="small" style="width:100%;text-align:center">'+(now<o?"Opens in":"Submissions close in")+'</p>'+u.map(function(x){return '<div><b>'+x[0]+'</b><span>'+x[1]+'</span></div>'}).join("")}
+  cd();setInterval(cd,1000);
+});
+</script>
+</body>
+</html>
